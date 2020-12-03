@@ -1,0 +1,5 @@
+build*/
+generate/
+pyif/
+isa/
+bin64/
