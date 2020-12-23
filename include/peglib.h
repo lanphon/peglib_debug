@@ -3637,6 +3637,19 @@ public:
 
   parser(const char *s) : parser(s, strlen(s), Rules()) {}
 
+  parser(parser&&) = default;
+  parser& operator=(parser&& rhs)
+  {
+      if (&rhs != this)
+      {
+          log = std::move(rhs.log);
+          grammar_ = std::move(rhs.grammar_);
+          //start_ = std::move(rhs.start_);
+          start_ = rhs.start_;
+      }
+      return *this;
+  }
+
   operator bool() { return grammar_ != nullptr; }
 
   bool load_grammar(const char *s, size_t n, const Rules &rules) {
