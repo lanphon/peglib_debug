@@ -3644,8 +3644,8 @@ public:
       {
           log = std::move(rhs.log);
           grammar_ = std::move(rhs.grammar_);
-          //start_ = std::move(rhs.start_);
-          start_ = rhs.start_;
+          start_ = std::move(rhs.start_);
+          //start_ = rhs.start_;
       }
       return *this;
   }
