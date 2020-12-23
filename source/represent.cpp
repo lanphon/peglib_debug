@@ -18,6 +18,7 @@ void representation_t::init()
 
     std::string wgl_peg = R"(
 ROOT        <- (word (NL word)*)?
+word <- [a-z]+
         CR          <- '\r'
         LF          <- '\n'
         ~NL         <- CR LF / CR / LF
